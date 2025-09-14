@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Pneumonia Detector</title>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.39/build/spline-viewer.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+  
+
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      font-family: 'Arial Black', sans-serif;
+    }
+    
+    .container-custom {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .left-side {
+      flex: 1;
+      height: 100%;
+    }
+    .heading{
+      font-family: 'Rubik Mono One', sans-serif;
+      color: rgb(0, 0, 0, 0.662);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .right-side {
+      flex: 1;
+      font-family:'Bebas Neue', sans-serif;
+      background-color: #e1c4ff;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+    h1 {
+      color: black;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .btn-custom {
+      margin-top: 1rem;
+      padding: 1rem;
+      font-weight: bold;
+      box-shadow: 2px 2px 5px #ccc;
+    }
+    .btn-upload {
+      background-color: white;
+      color: black;
+    }
+    .btn-checker {
+      background-color: white;
+      color: #000;
+    }
+    .btn-checker i,
+    .btn-upload i {
+      margin-right: 0.5rem;
+    }
+    .text-center {
+      text-align: center;
+      font-size: xx-large;
+      margin-bottom: 5.5rem;
+    } 
+    .neumorphic{
+      background: #e0e5ec;border-radius: 20px;
+      box-shadow: 10px 10px 20px #a3b1c9, -10px -10px 20px #ffffff;
+    }
+    .neumorphic-inset {
+      background: #e0e5ec; border-radius: 20px;
+      box-shadow: inset 10px 10px 20px #a3b1c9, inset -10px -10px 20px #ffffff;
+    }
+    .neumorphic-button {
+  font-family: sans-serif;
+  background: #e0e5ec;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  box-shadow: inset 10px 10px 20px #fdfdfd,
+              inset -10px -10px 20px #aaa5a5;
+  
+  transition: all 0.2s ease-in-out;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container-custom">
+    <div class="left-side">
+      <!-- Replace URL below with your actual Spline scene -->
+     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.39/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/N7nd1pd3ZeLWpjKq/scene.splinecode"></spline-viewer>
+    </div>
+
+    <div class="right-side">
+      <h1 class="heading">PULMOGUARD</h1>
+      <h2>AI - POWERED PNEUMONIA<br>DETECTOR.</h2>
+      <a href="/signup" class="btn btn-upload btn-custom">
+  <i class="bi bi-person-plus"></i> Sign-up
+</a>
+      <a href="/login" class="btn btn-checker btn-custom">
+        <i class="bi bi-box-arrow-in-right"></i> Login
+      </a>
+    </div>
+  </div>
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
+</html>

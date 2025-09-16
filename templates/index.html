@@ -1,33 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Pneumonia Detection</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-    <div class="container mt-5">
-        <div class="d-flex justify-content-end mb-3">
-            <a href="/logout" class="btn btn-danger">Logout</a>
-        </div>
-        <div class="card shadow p-4">
-            <h2 class="text-center text-primary mb-4">Pneumonia Detection</h2>
-            <form action="/predict" method="POST" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="image" class="form-label">Upload Chest X-ray Image</label>
-                    <input class="form-control" type="file" name="image" required>
-                </div>
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Detect Pneumonia</button>
-                </div>
-            </form>
+  <meta charset="UTF-8">
+  <title>Pneumonia Detection</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000; /* Black background */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-            {% if prediction %}
-            <div class="alert alert-info mt-4" role="alert">
-                <strong>Prediction:</strong> {{ prediction }}
-            </div>
-            {% endif %}
+    /* Center card on screen */
+    .center-card {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Glassmorphic card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .glass-card h2 {
+      font-weight: 600;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .form-label {
+      color: #dcdcdc;
+      font-weight: 500;
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border-radius: 12px;
+    }
+    .form-control::file-selector-button {
+      background: rgba(155, 81, 224, 0.9);
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 12px;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+    }
+
+    /* Purple neumorphic-style button */
+    .btn-purple {
+      background: linear-gradient(135deg, #6a0dad, #9b30ff);
+      border: none;
+      color: #fff;
+      border-radius: 30px;
+      padding: 0.75rem;
+      font-weight: bold;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6),
+                  -4px -4px 10px rgba(255, 255, 255, 0.05);
+      transition: 0.2s;
+    }
+    .btn-purple:hover {
+      background: linear-gradient(135deg, #9b30ff, #6a0dad);
+      transform: scale(1.05);
+    }
+
+    .alert-info {
+      background: rgba(155, 81, 224, 0.1);
+      border: 1px solid rgba(155, 81, 224, 0.3);
+      color: #d8b6ff;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container center-card">
+    <div class="glass-card col-md-6">
+      <h2 class="mb-4">UPLOAD YOUR X-RAY</h2>
+      <form action="/predict" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Chest X-ray Image</label>
+          <input class="form-control" type="file" name="image" required>
         </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-purple">Detect Pneumonia</button>
+        </div>
+      </form>
+
+      <!-- Prediction Result -->
+      {% if prediction %}
+      <div class="alert alert-info mt-4" role="alert">
+        <strong>Prediction:</strong> {{ prediction }}
+      </div>
+      {% endif %}
     </div>
+  </div>
 </body>
 </html>
